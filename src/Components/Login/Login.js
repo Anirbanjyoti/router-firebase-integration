@@ -4,7 +4,7 @@ import "../../firebase.init";
 import useFirebase from "../../hooks/useFirebases";
 
 const Login = () => {
-  const {signInGoogle} = useFirebase();
+  const { signInGoogle } = useFirebase();
   // const [user, setUser] = useState();
 
   return (
@@ -29,8 +29,14 @@ const Login = () => {
           Login
         </Button>
         <br />
-        <Button onClick={signInGoogle} variant="primary" type="submit">
-          Google Sign in
+        <Button
+          className="g-login"
+          onClick={signInGoogle}
+          variant="warning"
+          type="submit"
+        >
+          {" "}
+          Google Sign in{" "}
         </Button>
       </Form>
     </div>
