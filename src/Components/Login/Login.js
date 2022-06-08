@@ -1,8 +1,12 @@
-import React from "react";
 import { Button, Form } from "react-bootstrap";
-import './Login.css';
+import "./Login.css";
+import "../../firebase.init";
+import useFirebase from "../../hooks/useFirebases";
 
 const Login = () => {
+  const {signInGoogle} = useFirebase();
+  // const [user, setUser] = useState();
+
   return (
     <div className="form-container">
       <Form>
@@ -23,6 +27,10 @@ const Login = () => {
         </Form.Group>
         <Button variant="primary" type="submit">
           Login
+        </Button>
+        <br />
+        <Button onClick={signInGoogle} variant="primary" type="submit">
+          Google Sign in
         </Button>
       </Form>
     </div>
